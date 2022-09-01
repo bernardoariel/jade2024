@@ -4,6 +4,8 @@ switch ($_SESSION['usuario']) {
     break;
   case 'superadmin':
     break;
+  case 'stock':
+      break;
   default:
     include "404.php";
     exit;
