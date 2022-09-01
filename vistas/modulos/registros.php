@@ -2,15 +2,14 @@
 switch ($_SESSION['usuario']) {
   case 'admin':
     break;
-  case 'stock':
-      break; 
+  case 'superadmin':
+    break;
   default:
     include "404.php";
     exit;
     break;
 }
 ?>
-
 <div class="content-wrapper">
 
   <section class="content-header">

@@ -124,7 +124,7 @@
 
                   $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
 
-                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
+                  echo '<td>'.isset($respuestaCliente["nombre"]).'</td>';
 
                   
                   

@@ -21,3 +21,7 @@ PASSWORD
 NOMBRE_BD
 USUARIO
 PASSWORD
+## WINDOWS 7 
+xampp 7.1.16
+## WINDOWS 10
+Welcome to XAMPP for Windows 7.1.28

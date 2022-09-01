@@ -3,7 +3,9 @@ switch ($_SESSION['usuario']) {
   case 'admin':
     # code...
     break;
-  
+  case 'superadmin':
+      # code...
+      break;
   case 'superadmin2':
     # code...
     break;
