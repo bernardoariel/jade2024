@@ -42,6 +42,12 @@ switch ($_SESSION['usuario']) {
 
         </button>
 
+        <a href="vistas/modulos/descargar-reporte.php?reporte=reporte&tipo=productos">
+       
+         <button class="btn btn-success pull">Descargar reporte en Excel</button>
+
+        </a>
+
       </div>
 
       <div class="box-body">

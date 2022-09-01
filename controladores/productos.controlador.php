@@ -408,4 +408,60 @@ class ControladorProductos{
 
 	}	
 
+	/*=============================================
+	DESCARGAR EXCEL
+	=============================================*/
+
+	public function ctrDescargarReporte(){
+
+		if(isset($_GET["reporte"])){
+
+			$tabla = "productos";
+
+			$item = null;
+			$valor = null;
+			$orden = "id";
+		    $productos = ModeloProductos::mdlMostrarProductosFormateados($tabla, $item, $valor, $orden);
+
+			/*=============================================
+			CREAMOS EL ARCHIVO DE EXCEL
+			=============================================*/
+
+			$Name = 'productos.xls';
+
+			header('Expires: 0');
+			header('Cache-control: private');
+			header("Content-type: application/vnd.ms-excel"); // Archivo de Excel
+			header("Cache-Control: cache, must-revalidate"); 
+			header('Content-Description: File Transfer');
+			header('Last-Modified: '.date('D, d M Y H:i:s'));
+			header("Pragma: public"); 
+			header('Content-Disposition:; filename="'.$Name.'"');
+			header("Content-Transfer-Encoding: binary");
+
+			echo utf8_decode("<table border='0'> 
+					<tr>
+					<td style='font-weight:bold; border:1px solid #eee;'>NOMBRE</td>  
+					<td style='font-weight:bold; border:1px solid #eee;'>DESCRIPCION</td> 
+					<td style='font-weight:bold; border:1px solid #eee;'>CODIGO</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>CATEGORIA</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>STOCK</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>PRECIO</td>
+					</tr>");
+			
+					foreach ($productos as $key => $value) {
+						echo utf8_decode("<tr>
+			 			<td style='border:1px solid #eee;'>".$value["nombre"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$value["descripcion"]."</td>
+			 			<td style='border:1px solid #eee;'>".$value["codigo"]."</td>
+			 			<td style='border:1px solid #eee;'>".$value["categoria"]."</td>
+			 			<td style='border:1px solid #eee;'>".$value["stock"]."</td>
+			 			<td style='border:1px solid #eee;'>".$value["precio_venta"]."</td></tr>");
+					}
+
+			echo "</table>";
+
+		}
+
+	}
 }
