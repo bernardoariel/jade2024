@@ -96,7 +96,7 @@
 
                   $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
 // echo ' <td>'.$value["metodo_pago"].'</td>
-                  echo '<td>'.$respuestaCliente["nombre"].'</td>
+                  echo '<td>'.isset($respuestaCliente["nombre"]).'</td>
 
                  
 
