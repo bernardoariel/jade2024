@@ -189,7 +189,7 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "actualizar-precios" ||
          $_GET["ruta"] == "iniciar-stock" ||
          
-         
+         $_GET["ruta"] == "productos-ventas" ||
 
          $_GET["ruta"] == "imprimiretiqueta" ||
          $_GET["ruta"] == "editar-perfil" ||
@@ -257,7 +257,7 @@ CUERPO DOCUMENTO
 <script src="vistas/js/vales.js"></script>
 <script src="vistas/js/informes.js"></script>
 <script src="vistas/js/presupuestos.js"></script>
-
+<script src="vistas/js/ventas-productos.js"></script>
 
 </body>
 </html>

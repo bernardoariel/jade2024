@@ -426,8 +426,8 @@ copy($nombre_archivo, $nombre_archivo2);
 <script>
   
 $("#backup").hide("slow");
-window.location = "index.php?ruta=serverbk&actualizarServer=1";
-
+// window.location = "index.php?ruta=serverbk&actualizarServer=1";
+window.location = "index.php?ruta=inicio";
         
 
 </script>

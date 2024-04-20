@@ -307,7 +307,7 @@ class ControladorVentas{
 						             "fc"=>'');
 								$pago = ControladorVales::ctrModificarVale($datos);
 								echo '<script>
-										window.open("extensiones/tcpdf/pdf/vale.php?id='.$valor.'","VALE",1,2);
+										window.open("extensiones/tcpdf2/pdf/vale.php?id='.$valor.'","VALE",1,2);
 									  </script>';
 								
 							}
@@ -346,7 +346,7 @@ class ControladorVentas{
 				  }
 
 				  echo '<script>
-					window.open("extensiones/tcpdf/pdf/'.$_SESSION["TIPOFACTURA"].'.php?codigo='.$_POST["nuevaVentaForm"].'","FACTURA",1,2);
+					window.open("extensiones/tcpdf2/pdf/'.$_SESSION["TIPOFACTURA"].'.php?codigo='.$_POST["nuevaVentaForm"].'","FACTURA",1,2);
 				  window.location = "ventas";</script>';
 
 
@@ -1309,7 +1309,7 @@ static public function ctrRealizarPagoVenta(){
 	SUMA TOTAL VENTAS
 	=============================================*/
 
-	public function ctrSumaTotalVentas(){
+	static public function ctrSumaTotalVentas(){
 
 		$tabla = "ventas";
 
@@ -1333,14 +1333,12 @@ static public function ctrRealizarPagoVenta(){
 
 	}
 
-	public function ctrUltimoComprobante($item,$valor){
+	static public function ctrUltimoComprobante($item,$valor){
 
 		$tabla = "nrocomprobante";
-
-		$respuesta = ModeloVentas::mdlUltimoComprobante($tabla, $item, $valor);
-		
+		$modeloVentas = new ModeloVentas();
+		$respuesta = $modeloVentas->mdlUltimoComprobante($tabla, $item, $valor);
 		return $respuesta;
-				
 		
 	} 
 

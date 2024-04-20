@@ -172,8 +172,9 @@ switch ($_SESSION['usuario']) {
             
           <?php
 
-          
-          $respuesta = ControladorInformes::ajaxInformes();
+          $controladorInformes = new ControladorInformes();
+          // Llamar al método ajaxInformes utilizando la instancia
+          $controladorInformes->ajaxInformes();
          
          ?>
           

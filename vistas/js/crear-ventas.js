@@ -971,7 +971,7 @@ $("#btn-presupuesto").on("click",function(){
     processData: false,
     success:function(respuesta){
            
-      url = "extensiones/tcpdf/pdf/"+tipoFactura+"_presupuesto.php";
+      url = "extensiones/tcpdf2/pdf/"+tipoFactura+"_presupuesto.php";
       window.open(url, '_blank');
       window.location ="crear-venta" ;
 

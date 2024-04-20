@@ -1,5 +1,13 @@
 <?php
-
+ob_start();
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+/* ...
+ Resto del código que genera el PDF
+   ... */
+/* Limpiamos la salida del búfer y lo desactivamos */
+ob_end_clean();
 require_once "../../../controladores/productos.controlador.php";
 require_once "../../../modelos/productos.modelo.php";
 

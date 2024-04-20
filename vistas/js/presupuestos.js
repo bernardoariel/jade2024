@@ -55,7 +55,7 @@ $(".tablas").on("click", ".btnImprimirPresupuesto", function(){
 
 	var idPresupuesto = $(this).attr("idPresupuesto");
 	
-	window.open("extensiones/tcpdf/pdf/ticket_presupuesto.php?idPresupuesto="+idPresupuesto, "_blank");
+	window.open("extensiones/tcpdf2/pdf/ticket_presupuesto.php?idPresupuesto="+idPresupuesto, "_blank");
 	
 
 })

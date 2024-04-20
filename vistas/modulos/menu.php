@@ -282,6 +282,16 @@ echo '
 						</li>
 						<li>
 
+							<a href="productos-ventas">
+								
+								<i class="fa fa-line-chart"></i>
+								<span>InfoVenta</span>
+
+							</a>
+
+						</li>
+						<li>
+
 							<a href="informes">
 								
 								<i class="fa fa-database"></i>
@@ -382,6 +392,16 @@ echo '
 								
 								<i class="fa fa-file"></i>
 								<span>Presupuestos</span>
+
+							</a>
+
+						</li>
+						<li>
+
+							<a href="productos-ventas">
+								
+								<i class="fa fa-line-chart"></i>
+								<span>InfoVenta</span>
 
 							</a>
 
@@ -545,6 +565,16 @@ echo '
 								
 								<i class="fa fa-file"></i>
 								<span>Presupuestos</span>
+
+							</a>
+
+						</li>
+						<li>
+
+							<a href="productos-ventas">
+								
+								<i class="fa fa-line-chart"></i>
+								<span>InfoVenta</span>
 
 							</a>
 

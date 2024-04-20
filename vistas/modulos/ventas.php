@@ -121,10 +121,10 @@
 
                   $itemCliente = "id";
                   $valorCliente = $value["id_cliente"];
-
                   $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
-
-                  echo '<td>'.isset($respuestaCliente["nombre"]).'</td>';
+                  
+                 
+                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
 
                   
                   

@@ -67,13 +67,9 @@ $ventasCant = ControladorVentas::ctrContarVentas($item,$valor);
        "cuenta_corriente"=>0,
        "vale"=>0);
 
- 
     
     $insertarCaja = ControladorCaja::ctrIngresarCaja($item, $datos);
     // echo '<pre>'; print_r($insertarCaja); echo '</pre>';
-
-    
-
 
   }
 
@@ -125,7 +121,7 @@ $ventasCant = ControladorVentas::ctrContarVentas($item,$valor);
           
           <div class="inner">
             
-            <h3>$<?php echo number_format($ventas["total"],2); ?></h3>
+            <h3>$<?php echo isset($ventas["total"]) ? number_format($ventas["total"], 2) : "0.00"; ?></h3>
 
             <p>Total de Ventas</p>
           

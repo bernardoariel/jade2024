@@ -94,7 +94,8 @@ class ControladorUsuarios{
 							$nombredia = str_replace($dias_EN, $dias_ES, $dia);
 
 							$nombre_archivo = 'vistas/respaldos/'.strtolower($nombredia).'.sql.gz';
-							
+							/* echo '<pre>'.$nombre_archivo.'</pre>';
+							return false; */
 							if (file_exists($nombre_archivo)) {
 							    $ultimaBd =  date("d-m-Y", filectime($nombre_archivo));
 							    if ($ultimaBd == $fecha){

@@ -85,7 +85,7 @@ $(".tabladePagos").on("click", ".btnImprimirPagosCtaCorriente", function(){
     var codigo = $(this).attr("codigo");
     // console.log("fecha", fecha);
 alert(codigo);
-    window.open("extensiones/tcpdf/pdf/pagos.php?codigo="+codigo,"FACTURA",1,2);
+    window.open("extensiones/tcpdf2/pdf/pagos.php?codigo="+codigo,"FACTURA",1,2);
 })
 
 
@@ -164,7 +164,7 @@ $(".tabladePagos").on("click", ".btnVerArticulos", function(){
     var codigo = $(this).attr("codigoVenta");
     console.log("codigo", codigo);
     $(".finFactura #imprimirItems").remove();
-    boton = '<a href="extensiones/tcpdf/pdf/factura.php?codigo='+codigo+'" target="_blank" id="imprimirItems"><button type="button" class="btn btn-info pull-left">Imprimir Factura</button></a>';
+    boton = '<a href="extensiones/tcpdf2/pdf/factura.php?codigo='+codigo+'" target="_blank" id="imprimirItems"><button type="button" class="btn btn-info pull-left">Imprimir Factura</button></a>';
     $(".finFactura").append(boton);
     $(".tablaArticulosVer").empty();
     var datos = new FormData();

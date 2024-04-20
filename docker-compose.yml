@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  jade_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jade_web
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html/jade
+    links:
+      - jade_db
+  jade_db:
+    image: mariadb
+    restart: always
+    container_name: jade_db
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: jade
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+    volumes:
+      - ./mariadb:/var/lib/mysql
+
+  jade_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: jade_phpmyadmin
+    ports:
+      - "8080:80"
+    links:
+      - jade_db
+    environment:
+      PMA_HOST: jade_db
+      MYSQL_ROOT_PASSWORD: 123456

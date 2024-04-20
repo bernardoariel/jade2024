@@ -11,9 +11,10 @@ class ModeloVentas{
 	static public function mdlMostrarVentas($tabla, $item, $valor){
 
 		if($item != null){
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY id ASC");
-
+			$variable = "SELECT * FROM $tabla WHERE $item = :$item ORDER BY id ASC";
+			
+			$stmt = Conexion::conectar()->prepare($variable );
+			
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
@@ -274,40 +275,26 @@ class ModeloVentas{
 	=============================================*/	
 
 	static public function mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal){
-
 		if($fechaInicial == null){
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id DESC limit 60");
-
-			$stmt -> execute();
-
-			return $stmt -> fetchAll();	
-
-
-		}else if($fechaInicial == $fechaFinal){
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha like '%$fechaFinal%' ORDER BY id DESC limit 60");
-
-			$stmt -> bindParam(":fecha", $fechaFinal, PDO::PARAM_STR);
-
-			$stmt -> execute();
-
-			return $stmt -> fetchAll();
-
-		}else{
-
-			$fechaFinal = new DateTime();
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id DESC LIMIT 60");
+			$stmt->execute();
+			return $stmt->fetchAll();
+		} else if($fechaInicial == $fechaFinal){
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha LIKE '%$fechaFinal%' ORDER BY id DESC LIMIT 60");
+			$stmt->execute();
+			return $stmt->fetchAll();
+		} else {
+			$fechaFinal = new DateTime($fechaFinal);
 			$fechaFinal->add(new DateInterval('P1D'));
 			$fechaFinal2 = $fechaFinal->format('Y-m-d');
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN '$fechaInicial' AND '$fechaFinal2' ORDER BY id DESC");
-			$stmt -> execute();
-
-			return $stmt -> fetchAll();
-
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN :fechaInicial AND :fechaFinal ORDER BY id DESC");
+			$stmt->bindParam(":fechaInicial", $fechaInicial, PDO::PARAM_STR);
+			$stmt->bindParam(":fechaFinal", $fechaFinal2, PDO::PARAM_STR);
+			$stmt->execute();
+			return $stmt->fetchAll();
 		}
-
 	}
+	
 
 	static public function mdlRangoFechasVentasCobrados($tabla, $fechaInicial, $fechaFinal){
 

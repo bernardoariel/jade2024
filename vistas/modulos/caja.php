@@ -7,8 +7,6 @@ $valor = date('Y-m-d');
 $caja = ControladorCaja::ctrMostrarCaja($item, $valor);
 
 
-
-
  
 $item = "fecha";
 $valor = date('Y-m-d');

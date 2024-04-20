@@ -1,7 +1,7 @@
 $(".tablas").on("click", ".btnImprimirFacturaCta", function(){
 
 	var codigoVenta = $(this).attr("codigoVenta");
-	window.open("extensiones/tcpdf/pdf/factura.php?codigo="+codigoVenta, "_blank");
+	window.open("extensiones/tcpdf2/pdf/factura.php?codigo="+codigoVenta, "_blank");
 
 
 })
@@ -75,7 +75,7 @@ $("#btn-IngresarPago").on("click",function(){
 					
 			// 		if (result.value) {
 
-						window.open("extensiones/tcpdf/pdf/pagos.php?codigo="+respuesta,"FACTURA",1,2);
+						window.open("extensiones/tcpdf2/pdf/pagos.php?codigo="+respuesta,"FACTURA",1,2);
 						window.location = "ctacorriente";
 
 			// 		}

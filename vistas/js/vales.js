@@ -6,7 +6,7 @@ $(".tablaVales").on("click", ".btnImprimirVale", function(){
 
 	var idVale = $(this).attr("idVale");
 
-	window.open("extensiones/tcpdf/pdf/vale.php?id="+idVale);
+	window.open("extensiones/tcpdf2/pdf/vale.php?id="+idVale);
 	
 })
 

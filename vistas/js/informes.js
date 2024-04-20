@@ -15,7 +15,7 @@ $(".btnVerArticulosVendido").on("click", function(){
 	var codigo = $(this).attr("codigoVenta");
 	console.log("codigo", codigo);
 	$(".finFactura #imprimirItems").remove();
-	boton = '<a href="extensiones/tcpdf/pdf/factura.php?codigo='+codigo+'" target="_blank" id="imprimirItems"><button type="button" class="btn btn-info pull-left">Imprimir Factura</button></a>';
+	boton = '<a href="extensiones/tcpdf2/pdf/factura.php?codigo='+codigo+'" target="_blank" id="imprimirItems"><button type="button" class="btn btn-info pull-left">Imprimir Factura</button></a>';
 	$(".finFactura").append(boton);
 	$(".tablaArticulosVer").empty();
 	var datos = new FormData();

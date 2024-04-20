@@ -1,14 +1,14 @@
 <?php
-switch ($_SESSION['usuario']) {
-  case 'admin':
-    break;
-  case 'superadmin':
-    break;
-  default:
-    include "404.php";
-    exit;
-    break;
-}
+// switch ($_SESSION['usuario']) {
+//   case 'admin':
+//     break;
+//   case 'superadmin':
+//     break;
+//   default:
+//     include "404.php";
+//     exit;
+//     break;
+// }
 ?>
 
 <?php

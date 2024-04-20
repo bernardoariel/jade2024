@@ -1,5 +1,7 @@
 <?php
 
+/* Limpiamos la salida del búfer y lo desactivamos */
+ob_end_clean();
 require_once "../../../controladores/ventas.controlador.php";
 require_once "../../../modelos/ventas.modelo.php";
 
