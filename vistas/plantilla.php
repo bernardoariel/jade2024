@@ -190,7 +190,6 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "iniciar-stock" ||
          
          $_GET["ruta"] == "productos-ventas" ||
-
          $_GET["ruta"] == "imprimiretiqueta" ||
          $_GET["ruta"] == "editar-perfil" ||
          $_GET["ruta"] == "reportes" ||
@@ -198,11 +197,16 @@ CUERPO DOCUMENTO
 
         include "modulos/".$_GET["ruta"].".php";
 
-      }else{
+      } elseif ($_GET["ruta"] == "buscador") {
 
+        include "vistas/modulos/buscador/index.php";
+  
+      } else {
+  
         include "modulos/404.php";
-
+  
       }
+  
 
     }else{
 
@@ -223,12 +227,6 @@ CUERPO DOCUMENTO
   }else{
 
     include "modulos/login.php";
-
-
-
-      
-
-    
 
   }
 
