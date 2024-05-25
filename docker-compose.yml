@@ -9,9 +9,10 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./:/var/www/html/jade
-    links:
+      - ./:/var/www/html
+    depends_on:
       - jade_db
+
   jade_db:
     image: mariadb
     restart: always
@@ -22,7 +23,7 @@ services:
       MARIADB_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: jade
       MYSQL_USER: root
-      MYSQL_PASSWORD: 
+      MYSQL_PASSWORD: ""
     volumes:
       - ./mariadb:/var/lib/mysql
 
@@ -31,8 +32,6 @@ services:
     container_name: jade_phpmyadmin
     ports:
       - "8080:80"
-    links:
-      - jade_db
     environment:
       PMA_HOST: jade_db
       MYSQL_ROOT_PASSWORD: 123456
