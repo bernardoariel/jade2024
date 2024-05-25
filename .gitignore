@@ -1,4 +1,4 @@
 modelos/conexion.php
 vistas/respaldos/*
-backend
-mariadb
+backend/*
+mariadb/*
